@@ -1,0 +1,33 @@
+
+package.json: Configuration for npm, keeps track of version of dependency used ut can have caret or tilde.
+package-lock.json: Keeps track of exact version of the dependency used.
+
+There are 2 types of dependencies in npm:
+
+1) dev dependencies: Dependencies generally required in development phase.
+2) dependencies: Dependencies used in production also.
+
+^(caret) : npm will upgrade the dependency to the latest minor version available automatically.
+~(tilde) : npm will upgrade the dependency to the latet major version available automatically.
+* It is recommended to use caret.
+
+Transitive dependencies: When one dependency has other dependencies.
+
+npx: To execute a package.
+
+What Parcel Does:
+- Creates Dev Build.
+- Creates Local Server.
+- Do HMR = Hot Module Replacement.(It does this by using a File Watching algorithm which is written in C++)
+- Gives faster builds because of caching.
+- Image Optimization.
+- Minification.
+- Bundling.
+- Content Hashing.
+- Code Splitting.
+- Differential Bundling: Support for older browsers.
+- Diagnostics.
+- Error Handling.
+- HTTPs.
+- Tree Shaking: Remove unused code.
+- Different dev and prod builds.
