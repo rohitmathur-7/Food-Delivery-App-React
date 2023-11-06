@@ -1,0 +1,6 @@
+
+React.createElement => ReactElement - JS Object => HTMLElement(render)
+
+JSX => React.createElement => ReactElement - JS Object => HTMLElement(render)
+
+React Functional Component: Js function which returns a React Element.
