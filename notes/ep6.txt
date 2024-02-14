@@ -1,0 +1,7 @@
+
+useEffect
+Monolith Architecture
+Microservice
+
+- Get data from Api
+- Login, Logout

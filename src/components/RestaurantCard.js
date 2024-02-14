@@ -3,9 +3,8 @@ import { RES_CARD_IMG } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData, search } = props;
   const { name, avgRating, sla, cuisines, cloudinaryImageId } = resData;
-  console.log(search);
 
-  if (name.toLowerCase().includes(search)) {
+  if (name.toLowerCase().includes(search.toLowerCase())) {
     return (
       <div className="res-card">
         <img className="card-img" src={RES_CARD_IMG + cloudinaryImageId} />

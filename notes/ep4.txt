@@ -1,1 +1,16 @@
-- Config driven UI.
+- Config driven UI: Controlling UI through data.
+
+Header 
+ - Logo
+ - Nav Items
+
+Body
+ - Search
+ - RestaurantContainer
+    - RestaurantCard
+
+Footer
+ - Copywright
+ - Links
+ - Address
+ - Contact

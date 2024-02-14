@@ -5,6 +5,14 @@ import Body from "./src/components/Body";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo"></div>
+    </div>
+  );
+};
+
 const App = () => {
   return (
     <div>
