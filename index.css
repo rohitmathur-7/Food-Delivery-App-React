@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid black;
   padding-right: 50px;
 }
@@ -46,4 +47,8 @@
   width: 250px;
   height: 400px;
   background-color: #f0f0f0;
+}
+
+.user-login {
+  flex-basis: 100px;
 }
