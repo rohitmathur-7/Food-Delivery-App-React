@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
+  console.log("Header");
   const [userLogin, setUserLogin] = useState("Login");
+  useEffect(() => {
+    console.log("useEffect called");
+  }, [userLogin]);
+
   return (
     <div className="header">
       <img src={LOGO_URL} className="logo" />
@@ -11,17 +16,17 @@ const Header = () => {
         <li>About Us</li>
         <li>Contact Us</li>
         <li>Cart</li>
+        <button
+          className="user-login"
+          onClick={() => {
+            userLogin === "Login"
+              ? setUserLogin("Logout")
+              : setUserLogin("Login");
+          }}
+        >
+          {userLogin}
+        </button>
       </ul>
-      <button
-        className="user-login"
-        onClick={() => {
-          userLogin === "Login"
-            ? setUserLogin("Logout")
-            : setUserLogin("Login");
-        }}
-      >
-        {userLogin}
-      </button>
     </div>
   );
 };

@@ -1,0 +1,13 @@
+What will you learn:
+
+- Routing (Basically how to create multiple pages on your site)
+
+- If no dependency array in useEffect => useEffect is called on every render
+- If dependency array is empty => useEffect is called on initial render(just once)
+- If there is somethig in dependency array => useEffect is called everytime when the thing mentioned in the dependency array is updated.
+
+- React applications are known as single page applications.
+
+# 2 types of routing in web apps:
+- Client Side Routing: No network call will be made, we already have the component for /about, so it will just load the About component.
+- Server Side Routing: In this if we go to /about then a Network Request will be made to fetch the About page from the server.
