@@ -7,6 +7,7 @@ export const resList = [
       locality: "Sindhi Camp",
       areaName: "Sindhi Camp",
       costForTwo: "₹200 for two",
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       cuisines: [
         "North Indian",
         "Thalis",
@@ -110,6 +111,7 @@ export const resList = [
       areaName: "Vaishali Nagar",
       costForTwo: "₹200 for two",
       cuisines: ["Sweets", "North Indian", "Italian"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.3,
       veg: true,
       feeDetails: {
@@ -193,6 +195,7 @@ export const resList = [
       areaName: "Shyam Nagar",
       costForTwo: "₹300 for two",
       cuisines: ["Bakery", "Sweets", "South Indian", "North Indian", "Chinese"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.1,
       veg: true,
       feeDetails: {
@@ -294,6 +297,7 @@ export const resList = [
       areaName: "Shashtri Nagar",
       costForTwo: "₹200 for two",
       cuisines: ["Desserts", "Sweets"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.4,
       veg: true,
       feeDetails: {
@@ -395,6 +399,7 @@ export const resList = [
       areaName: "Vidhyadhar Nagar",
       costForTwo: "₹100 for two",
       cuisines: ["Bakery", "Sweets", "Desserts"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.2,
       veg: true,
       feeDetails: {
@@ -496,6 +501,7 @@ export const resList = [
       areaName: "Bani Park",
       costForTwo: "₹200 for two",
       cuisines: ["Snacks", "Beverages"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.2,
       veg: true,
       feeDetails: {
@@ -597,6 +603,7 @@ export const resList = [
       areaName: "C Scheme",
       costForTwo: "₹200 for two",
       cuisines: ["North Indian", "Snacks", "Indian"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.3,
       veg: true,
       feeDetails: {
@@ -706,6 +713,7 @@ export const resList = [
         "Italian",
         "Bakery",
       ],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.3,
       veg: true,
       feeDetails: {
@@ -807,6 +815,7 @@ export const resList = [
       areaName: "Shyam Nagar",
       costForTwo: "₹200 for two",
       cuisines: ["Sweets", "Bengali", "Snacks"],
+      menu: ["Kachori", "Samosa", "Jalebi", "Namkeen", "Daal Baati"],
       avgRating: 4.5,
       veg: true,
       feeDetails: {
