@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../utils/mockdata";
 import { SWIGGY_ALL_RESTAURANTS } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -24,6 +25,12 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return "You are offline. Please check your Internet connection";
+  }
 
   return listOfRes.length === 0 ? (
     <Shimmer />
