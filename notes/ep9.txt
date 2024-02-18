@@ -1,0 +1,6 @@
+What will you learn:
+
+- Custom Hooks
+- Single Responsibility Principle
+- Dynamic Bundling
+- Suspense Component
