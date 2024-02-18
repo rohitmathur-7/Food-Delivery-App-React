@@ -1,0 +1,19 @@
+What will you learn:
+- Class Based Components
+- React Lifecycle
+
+React Lifecycle:
+----------------------------------------------------------------
+
+- ComponentDidMount: Used to make API Calls.
+
+(1 parent 1 child)
+Parent Constructor -> Parent Render -> Child Constructor -> Child Render -> Child ComponentDidMount -> Parent ComponentDidMount
+
+(1 parent 2 or n childs)
+Parent Constructor -> Parent Render -> Child1 Constructor -> Child1 Render ->  Child2 Constructor -> Child2 Render -> Child1 ComponentDidMount -> Child2 ComponentDidMount -> Parent ComponentDidMount
+
+Lifecycle is divided into two phases:
+
+1) Render Phase: Constructor and Render method takes place. (Batched together for all childs)
+2) Commit Phase: This is batched together for all the childs as DOM manipulation takes time, so it is only done once for all the childs. (Batched together for all childs)
