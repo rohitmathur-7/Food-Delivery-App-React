@@ -53,7 +53,7 @@ const Body = () => {
           setListOfRes(filteredList);
         }}
       >
-        High Rated Restauranasdsadasts!
+        High Rated Restaurants!
       </button>
       <div className="res-container">
         {listOfRes.map((restaurant) => (
