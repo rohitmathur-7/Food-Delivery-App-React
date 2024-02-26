@@ -1,10 +1,11 @@
 import RestaurantCard, { withRestaurantCard } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../utils/mockdata";
 import { SWIGGY_ALL_RESTAURANTS } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -19,6 +20,8 @@ const Body = () => {
   };
 
   const TopRatedRestaurants = withRestaurantCard(RestaurantCard);
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -64,6 +67,12 @@ const Body = () => {
       >
         Search
       </button>
+      <input
+        type="text"
+        className="border border-cyan-600"
+        value={loggedInUser}
+        onChange={(e) => setUserName(e.target.value)}
+      />
       <br></br>
       <button
         onClick={() => {

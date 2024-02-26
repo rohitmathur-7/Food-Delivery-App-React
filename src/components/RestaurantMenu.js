@@ -24,8 +24,6 @@ const RestaurantMenu = () => {
     );
 
   const handleShowItem = (index) => {
-    console.log("🚀 ~ handleShowItem ~ index:", index);
-    console.log("🚀 ~ handleShowItem ~ showItem:", showItem);
     index === showItem ? setShowItem(null) : setShowItem(index);
   };
 
