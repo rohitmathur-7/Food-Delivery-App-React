@@ -1,11 +1,8 @@
-import { useState } from "react";
 import RestaurantCategoryItem from "./RestaurantCategoryItem";
 
-const RestaurantCategory = ({ data }) => {
-  const [openItem, setOpenItem] = useState(false);
-
+const RestaurantCategory = ({ data, showItem, setShowItem }) => {
   const handleClick = () => {
-    setOpenItem(!openItem);
+    setShowItem();
   };
 
   return (
@@ -19,7 +16,7 @@ const RestaurantCategory = ({ data }) => {
         </h1>
         <span>⬇️</span>
       </div>
-      {openItem && <RestaurantCategoryItem data={data.itemCards} />}
+      {showItem && <RestaurantCategoryItem data={data.itemCards} />}
     </div>
   );
 };

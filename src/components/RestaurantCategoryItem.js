@@ -2,7 +2,7 @@ const RestaurantCategoryItem = ({ data }) => {
   return (
     <div>
       {data.map((item) => (
-        <div>
+        <div key={item.card.info.name}>
           <span>{item.card.info.name}</span>;
         </div>
       ))}

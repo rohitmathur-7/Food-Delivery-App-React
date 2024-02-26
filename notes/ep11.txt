@@ -2,3 +2,11 @@ What will you learn:
 
 - Higher Order Components
 - Controlled and Uncontrolled Components
+- Props Drilling
+- Context
+
+Controlled Components: If a component is majorly controlled by the parent component then its controlled.
+
+Uncontrolled Components: If a component is managing itself then its uncontrolled.
+
+Props Drilling: 
