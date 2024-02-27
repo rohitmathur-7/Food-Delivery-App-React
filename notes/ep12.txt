@@ -1,0 +1,24 @@
+What will you learn:
+
+- Redux
+
+
+- Redux and React are different libraries.
+- Slice: Partitions in our redux store.
+
+
+Add to cart functionality:
+----------------------------------------------------------------
+* For Writing to the Redux store:
+- When we click on add button it dispatches an action that calls a function and this function will
+  internally modify the cart.
+  - This function which modifies the cart is known as reducer.
+
+  Add(button) --> Action(dispatch) --> Reducer Function --> Store
+
+
+* For Reading from the Redux store:
+- We will use a Selector which will give us the data from the Redux store.(This phenomenon is know as "Subscribing to the Store".)
+- If we want to show data in the Header component from the Redux store then we will do it using a Selector and this will be called "Header is Subscribed to the Store using Selector".
+ 
+  Store --> Selector --> Header Component get updated AutoMagically.

@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [userLogin, setUserLogin] = useState("Login");
@@ -10,6 +11,8 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   const onlineStatus = useOnlineStatus();
+
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="header flex items-center justify-between m-4 p-4">
@@ -27,7 +30,9 @@ const Header = () => {
         <Link to="/contact">
           <li>Contact Us</li>
         </Link>
-        <li>Cart</li>
+        <Link to="/cart">
+          <li>Cart - ({cartItems.length})</li>
+        </Link>
         <Link to="/grocery">
           <li>Grocery</li>
         </Link>

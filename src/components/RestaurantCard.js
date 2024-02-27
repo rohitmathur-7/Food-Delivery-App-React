@@ -3,7 +3,7 @@ import { RES_CARD_IMG } from "../utils/constants";
 import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
-  const { resData, search } = props;
+  const { resData } = props;
   const { name, avgRating, sla, cuisines, cloudinaryImageId } = resData;
   const { loggedInUser } = useContext(UserContext);
 
