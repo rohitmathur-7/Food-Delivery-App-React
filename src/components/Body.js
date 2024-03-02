@@ -57,7 +57,7 @@ const Body = () => {
           }}
           className="bg-[#fb923c] text-white font-medium p-2 rounded-md flex gap-1 items-center"
         >
-          <span>
+          {/* <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
@@ -71,7 +71,7 @@ const Body = () => {
                 stroke-width="1.5"
               />
             </svg>
-          </span>
+          </span> */}
           Search
         </button>
         <button

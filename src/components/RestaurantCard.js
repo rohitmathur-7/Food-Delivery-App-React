@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
       <div className="py-2 px-4">
         <h3 className="font-bold">{name}</h3>
         <div className="flex font-semibold ">
-          <span className="pr-1">
+          {/* <span className="pr-1">
             <svg
               width="20"
               height="20"
@@ -50,7 +50,7 @@ const RestaurantCard = (props) => {
                 </linearGradient>
               </defs>
             </svg>
-          </span>
+          </span> */}
           <span className="pr-2">{avgRating}</span>
           <span className="pr-2">.</span>
           <span>{sla.slaString}</span>
