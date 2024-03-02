@@ -7,8 +7,7 @@ Types of Testing:
 - Integration Testing
 - End to End Testing - e2e testing
 
-
-
+- "it" is an alias for "test".
 
 
 
