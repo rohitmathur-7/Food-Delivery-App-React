@@ -39,7 +39,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="app-body">
-      <div>
+      <div className="flex flex-col items-center ">
         <h2>What's on your mind</h2>
         <Dish />
       </div>

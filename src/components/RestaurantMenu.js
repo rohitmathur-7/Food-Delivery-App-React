@@ -14,8 +14,6 @@ const RestaurantMenu = () => {
   const { name, costForTwoMessage, cuisines } =
     resInfo?.cards[0]?.card?.card?.info;
 
-  // const { itemCards } =
-  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   const itemCards =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (item) =>
@@ -43,11 +41,6 @@ const RestaurantMenu = () => {
               showItem={index === showItem && true}
               setShowItem={() => handleShowItem(index)}
             />
-            // <li key={item.card.info.name}>
-            //   {item.card.info.name} - ₹
-            //   {item.card.info?.defaultPrice / 100 ||
-            //     item.card.info?.price / 100}
-            // </li>
           ))}
         </ul>
       </div>
