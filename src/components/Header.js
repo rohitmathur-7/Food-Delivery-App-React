@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <div className="header flex items-center justify-between m-4 p-4">
       <Link to="/">
-        <img src={LOGO_URL} className="logo w-40" />
+        🍔 <span className="logo">FoodMania</span>
       </Link>
       <ul className="nav-items flex flex-row gap-4">
         <li>Online Status: {onlineStatus ? "✅" : "❌"}</li>
