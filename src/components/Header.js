@@ -15,12 +15,14 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="header flex items-center justify-between m-4 p-4">
+    <div className="header flex items-center justify-around my-4 p-4 shadow-md font-montserrat ">
       <Link to="/">
-        🍔 <span className="logo">FoodMania</span>
+        <div className="text-4xl">
+          🍔 <span className="logo">FoodMania</span>
+        </div>
       </Link>
-      <ul className="nav-items flex flex-row gap-4">
-        <li>Online Status: {onlineStatus ? "✅" : "❌"}</li>
+      <ul className="nav-items flex flex-row gap-8 text-xl ">
+        {/* <li>Online Status: {onlineStatus ? "✅" : "❌"}</li> */}
         <Link to="/">
           <li>Home</li>
         </Link>
@@ -31,12 +33,12 @@ const Header = () => {
           <li>Contact Us</li>
         </Link>
         <Link to="/cart">
-          <li>Cart - ({cartItems.length}) Items</li>
+          <li>🛒Cart - ({cartItems.length}) Items</li>
         </Link>
-        <Link to="/grocery">
+        {/* <Link to="/grocery">
           <li>Grocery</li>
-        </Link>
-        <button
+        </Link> */}
+        {/* <button
           className="user-login"
           onClick={() => {
             userLogin === "Login"
@@ -46,7 +48,7 @@ const Header = () => {
         >
           {userLogin}
         </button>
-        <li>{loggedInUser}</li>
+        <li>{loggedInUser}</li> */}
       </ul>
     </div>
   );

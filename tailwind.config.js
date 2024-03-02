@@ -2,7 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        lato: ["Lato"],
+        garamond: ["Garamond"],
+      },
+    },
   },
   plugins: [],
 };
