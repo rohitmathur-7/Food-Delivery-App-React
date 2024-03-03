@@ -21,7 +21,7 @@ const Header = () => {
           🍔 <span className="logo">FoodMania</span>
         </div>
       </Link>
-      <ul className="nav-items flex flex-row gap-8 text-xl ">
+      <ul className="nav-items flex flex-row gap-8 text-xl font-medium ">
         {/* <li>Online Status: {onlineStatus ? "✅" : "❌"}</li> */}
         <Link to="/">
           <li>Home</li>

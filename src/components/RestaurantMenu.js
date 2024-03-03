@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <div className="text-center w-[1000px] mx-auto mt-10">
+      <div className="text-center w-[700px] mx-auto mt-10">
         <div className="flex justify-between pb-4 border-b-2 border-dashed ">
           <div>
             <h2 className="font-medium text-2xl">{name}</h2>
@@ -68,7 +68,7 @@ const RestaurantMenu = () => {
           />
           <h4 className="font-bold">{costForTwoMessage}</h4>
         </div>
-        <div className="flex overflow-x-scroll no-scrollbar w-[1000px] m-auto gap-6 text-sm ">
+        <div className="flex overflow-x-scroll no-scrollbar m-auto gap-6 text-sm w-full ">
           {offers.map((item, index) => (
             <div
               key={index}
@@ -91,7 +91,7 @@ const RestaurantMenu = () => {
           ))}
         </div>
 
-        <ul>
+        <ul className="mt-8">
           {itemCards.map((item, index) => (
             <RestaurantCategory
               key={item.card.card.title}
