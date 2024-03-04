@@ -2,9 +2,11 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import RestaurantCategoryItem from "./RestaurantCategoryItem";
 import { clearCart } from "../utils/cartSlice";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
+
   const dispatch = useDispatch();
 
   const handleClearCart = () => {
@@ -20,7 +22,9 @@ const Cart = () => {
       >
         Clear Cart
       </button>
-      {cartItems.length === 0 && <h1>Cart is empty! Please add some items.</h1>}
+      {cartItems.length === 0 && (
+        <h2 className="text-xl py-4">Cart is empty! Please add some items.</h2>
+      )}
       <div>
         <RestaurantCategoryItem data={cartItems} />
       </div>
