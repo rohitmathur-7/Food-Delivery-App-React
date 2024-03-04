@@ -36,7 +36,6 @@ const RestaurantCategoryItem = ({ data }) => {
   return (
     <div>
       {data.map((item, index) => {
-        // console.log("🚀 ~ {data.map ~ item:", item);
         const itemQuantity = isQuantityGreater(item);
 
         return (

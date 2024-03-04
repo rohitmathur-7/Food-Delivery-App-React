@@ -14,6 +14,11 @@ const Header = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
 
+  let totalItems = 0;
+  cartItems.map((item) => {
+    totalItems += item.quantity;
+  });
+
   return (
     <div className="header flex items-center justify-around my-4 p-4 shadow-md font-montserrat ">
       <Link to="/">
@@ -33,22 +38,8 @@ const Header = () => {
           <li>Contact Us</li>
         </Link>
         <Link to="/cart">
-          <li>🛒Cart - ({cartItems.length}) Items</li>
+          <li>🛒Cart - ({totalItems}) Items</li>
         </Link>
-        {/* <Link to="/grocery">
-          <li>Grocery</li>
-        </Link> */}
-        {/* <button
-          className="user-login"
-          onClick={() => {
-            userLogin === "Login"
-              ? setUserLogin("Logout")
-              : setUserLogin("Login");
-          }}
-        >
-          {userLogin}
-        </button>
-        <li>{loggedInUser}</li> */}
       </ul>
     </div>
   );
