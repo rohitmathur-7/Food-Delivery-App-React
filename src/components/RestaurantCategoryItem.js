@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 import { RES_CARD_IMG } from "../utils/constants";
 
 const RestaurantCategoryItem = ({ data }) => {
@@ -17,6 +17,10 @@ const RestaurantCategoryItem = ({ data }) => {
       const newItem = { ...item, quantity: 1 };
       dispatch(addItem(newItem));
     }
+  };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
   };
 
   const isQuantityGreater = (item) => {
@@ -73,7 +77,7 @@ const RestaurantCategoryItem = ({ data }) => {
                   </span>
                   <button
                     className="bg-black text-white px-[12px] py-[10px] rounded-lg absolute -bottom-4 left-[60px] "
-                    onClick={() => handleAddItem(item)}
+                    onClick={() => handleRemoveItem(item)}
                   >
                     -
                   </button>
