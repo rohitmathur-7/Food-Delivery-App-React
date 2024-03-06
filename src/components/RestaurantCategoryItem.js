@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import { addItem, removeItem } from "../utils/cartSlice";
 import { RES_CARD_IMG } from "../utils/constants";
 
-const RestaurantCategoryItem = ({ data }) => {
+const RestaurantCategoryItem = ({ data, isVeg }) => {
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log("🚀 ~ RestaurantCategoryItem ~ cartItems:", cartItems);
 
   const dispatch = useDispatch();
 

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
@@ -9,6 +9,7 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
   const [showItem, setShowItem] = useState(null);
+  const [isChecked, setIsChecked] = useState(false);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -34,6 +35,10 @@ const RestaurantMenu = () => {
 
   const handleShowItem = (index) => {
     index === showItem ? setShowItem(null) : setShowItem(index);
+  };
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
   };
 
   if (itemCards === undefined) return <Shimmer />;
@@ -89,16 +94,33 @@ const RestaurantMenu = () => {
             </div>
           ))}
         </div>
-
-        <ul className="mt-8">
-          {itemCards.map((item, index) => (
-            <RestaurantCategory
-              key={item.card.card.title}
-              data={item.card.card}
-              showItem={index === showItem && true}
-              setShowItem={() => handleShowItem(index)}
+        <div className="text-left my-8">
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              className="sr-only peer"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
             />
-          ))}
+            <span className="ms-3 text-sm font-medium text-gray-900 dark:text-black mr-4">
+              Veg Only
+            </span>
+            <div className="relative w-11 h-[1.2rem] bg-gray-200 peer-focus:outline-none peer-focus:ring-0 dark:peer-focus:ring-0 rounded-[5px] peer dark:bg-gray-400 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-[5px] after:h-[0.9rem] after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#008000]"></div>
+          </label>
+        </div>
+        <ul className="mt-8">
+          {itemCards.map((item, index) => {
+            return (
+              <RestaurantCategory
+                key={item.card.card.title}
+                data={item.card.card}
+                showItem={index === showItem && true}
+                setShowItem={() => handleShowItem(index)}
+                isVeg={isChecked}
+              />
+            );
+          })}
         </ul>
       </div>
     </>
