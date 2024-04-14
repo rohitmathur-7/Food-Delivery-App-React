@@ -21,17 +21,17 @@ const RestaurantMenu = () => {
     locality,
     avgRating,
     totalRatingsString,
-  } = resInfo?.cards[0]?.card?.card?.info;
+  } = resInfo?.cards[2]?.card?.card?.info;
 
   const itemCards =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (item) =>
-        item?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+  resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    (item) =>
+    item?.card?.card?.["@type"] ===
+    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
 
   const offers =
-    resInfo?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers;
+    resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
 
   const handleShowItem = (index) => {
     index === showItem ? setShowItem(null) : setShowItem(index);

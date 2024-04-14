@@ -2,11 +2,10 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
-// import About from "./src/components/About";
+import About from "./src/components/About";
 import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
 import RestaurantMenu from "./src/components/RestaurantMenu";
-// import Grocery from "./src/components/Grocery";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./src/utils/UserContext";
 import { Provider } from "react-redux";
@@ -41,7 +40,7 @@ const App = () => {
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app">
+        <div className="app flex flex-col">
           <Header />
           <Outlet />
         </div>

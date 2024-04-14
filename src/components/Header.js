@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [userLogin, setUserLogin] = useState("Login");
+
   useEffect(() => {}, [userLogin]);
   const { loggedInUser } = useContext(UserContext);
 
@@ -20,7 +21,7 @@ const Header = () => {
   });
 
   return (
-    <div className="header flex items-center justify-around my-4 p-4 shadow-md font-montserrat ">
+    <div className="header flex items-center justify-around mb-4 p-4 shadow-md font-montserrat ">
       <Link to="/">
         <div className="text-4xl">
           🍔 <span className="logo">FoodMania</span>
@@ -32,10 +33,7 @@ const Header = () => {
           <li>Home</li>
         </Link>
         <Link to="/about">
-          <li>About Us</li>
-        </Link>
-        <Link to="/contact">
-          <li>Contact Us</li>
+          <li>About Me!</li>
         </Link>
         <Link to="/cart">
           <li>🛒Cart - ({totalItems}) Items</li>
