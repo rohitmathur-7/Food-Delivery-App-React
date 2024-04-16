@@ -12,14 +12,13 @@ import imgSearch from "../assets/white-search.svg";
 const Body = () => {
   const listOfRes = useAllRestaurants();
   const [filteredListOfRes, setFilteredListOfRes] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     setFilteredListOfRes(listOfRes);
   }, [listOfRes]);
 
-  const [search, setSearch] = useState("");
-
-  const filterList = () => {
+  const filterList = (search) => {
     const filteredList = listOfRes.filter((item) => {
       return item.info.name.toLowerCase().includes(search.toLowerCase());
     });
@@ -33,7 +32,6 @@ const Body = () => {
   if (onlineStatus === false) {
     return "You are offline. Please check your Internet connection";
   }
-  console.log("🚀 ~ Body ~ listOfRes:", listOfRes.length);
 
   return listOfRes.length === 0 ? (
     <Shimmer />
@@ -48,21 +46,11 @@ const Body = () => {
           placeholder="Search for dishes or restaurants"
           value={search}
           onChange={(event) => {
+            filterList(event.target.value);
             setSearch(event.target.value);
           }}
           className="border border-gray-400 text-gray-600 focus-visible:outline-none rounded-md px-3 py-2 w-72"
         />
-        <button
-          onClick={() => {
-            filterList();
-          }}
-          className="bg-[#fb923c] text-white font-medium p-2 rounded-md flex gap-1 items-center"
-        >
-          <span>
-            <img src={imgSearch}></img>
-          </span>
-          Search
-        </button>
         <button
           onClick={() => {
             const filteredList = listOfRes.filter(

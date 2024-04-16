@@ -44,7 +44,7 @@ const UserClass = () => {
             alt="Profile"
           ></img>
         </div>
-        <div className="flex flex-col justify-center px-12">
+        <div className="flex flex-col justify-center px-12 w-[700px] ">
           {step === 0 && (
             <div className="flex flex-col gap-8">
               <h2 className="text-5xl">Hi 👋, I'm Rohit Mathur</h2>
@@ -95,7 +95,7 @@ const UserClass = () => {
           )}
           {step === 1 && (
             <div className="flex flex-col gap-5">
-              <h2 className="text-xl font-medium">
+              <h2 className="text-2xl font-medium">
                 I am currently Learning and Working on:
               </h2>
               <div className="flex flex- gap-10">
@@ -148,8 +148,11 @@ const UserClass = () => {
           )}
           {step === 2 && (
             <div className="flex flex-col gap-5">
-              <h2 className="text-xl font-medium">Connect with me: </h2>
-              <div className="flex flex- gap-10">
+              <h2 className="text-2xl font-medium mb-5">
+                Let's connect and have some amazing Conversations about anything
+                you want!😎
+              </h2>
+              <div className="flex gap-10">
                 <Link to={instaURL} target="_blank" rel="noopener noreferrer">
                   <img
                     className="object-contain w-[75px] h-[75px] transition-transform hover:scale-125 duration-200"
