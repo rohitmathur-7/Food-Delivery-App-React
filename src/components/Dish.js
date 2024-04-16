@@ -29,7 +29,7 @@ const Dish = () => {
   return dishes.length === 0 ? (
     <DishShimmer />
   ) : (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-4/5">
       <div className="flex justify-between w-full">
         <h2 className="font-bold text-2xl">What's on your mind</h2>
         <div className="flex gap-3">
@@ -47,17 +47,15 @@ const Dish = () => {
           </button>
         </div>
       </div>
-      <div className="relative">
-        <div
-          className="flex overflow-x-scroll no-scrollbar w-[1000px] cursor-pointer border-b-2 mb-10 transition-all ease-in-out delay-1000"
-          ref={scrollRef}
-        >
-          {dishes.map((item) => (
-            <div className="min-w-[200px]" key={item.action.text}>
-              <img src={RES_CARD_IMG + item.imageId} />
-            </div>
-          ))}
-        </div>
+      <div
+        className="flex overflow-x-scroll no-scrollbar w-full cursor-pointer border-b-2 mb-10 transition-all ease-in-out delay-1000"
+        ref={scrollRef}
+      >
+        {dishes.map((item) => (
+          <div className="min-w-[200px]" key={item.action.text}>
+            <img src={RES_CARD_IMG + item.imageId} />
+          </div>
+        ))}
       </div>
     </div>
   );

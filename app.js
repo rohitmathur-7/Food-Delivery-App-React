@@ -40,7 +40,7 @@ const App = () => {
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app flex flex-col">
+        <div className="app flex flex-col items-center">
           <Header />
           <Outlet />
         </div>

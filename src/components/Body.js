@@ -33,13 +33,13 @@ const Body = () => {
     return "You are offline. Please check your Internet connection";
   }
 
+  console.log("🚀 ~ Body ~ listOfRes:", listOfRes);
+
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="app-body font-montserra">
-      <div className="flex flex-col items-center ">
-        <Dish />
-      </div>
+    <div className="app-body font-montserra max-w-screen-2xl flex flex-col items-center w-full">
+      <Dish />
       <div className="flex gap-2 justify-center">
         <input
           type="text"

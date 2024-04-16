@@ -21,14 +21,14 @@ const Header = () => {
   });
 
   return (
-    <div className="header flex items-center justify-around mb-4 p-4 shadow-md font-montserrat ">
+    <div className="header flex items-center justify-around mb-4 p-4 shadow-md font-montserrat w-full">
       <Link to="/">
         <div className="text-4xl">
           🍔 <span className="logo">FoodMania</span>
         </div>
       </Link>
-      <ul className="nav-items flex flex-row gap-8 text-xl font-medium ">
-        {/* <li>Online Status: {onlineStatus ? "✅" : "❌"}</li> */}
+      <ul className="nav-items flex flex-row gap-8 text-sm lg:text-xl font-medium ">
+        <li>Online Status: {onlineStatus ? "✅" : "❌"}</li>
         <Link to="/">
           <li>Home</li>
         </Link>
