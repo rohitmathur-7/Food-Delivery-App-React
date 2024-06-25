@@ -24,11 +24,11 @@ const RestaurantMenu = () => {
   } = resInfo?.cards[2]?.card?.card?.info;
 
   const itemCards =
-  resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-    (item) =>
-    item?.card?.card?.["@type"] ===
-    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-  );
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (item) =>
+        item?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
   const offers =
     resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
       <div className="text-center w-[700px] mx-auto mt-10">
         <div className="flex justify-between pb-4 border-b-2 border-dashed ">
           <div>
-            <h2 className="font-medium text-2xl">{name}</h2>
+            <h2 className="font-medium text-2xl text-left">{name}</h2>
             <h4 className="font-extralight text-left ">
               {cuisines.join(", ")}
             </h4>
