@@ -34,32 +34,36 @@ const UserClass = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-full">
-      <div className="flex customShadow rounded-3xl w-[1150px]">
-        <div className="flex justify-center">
+    <div className="flex justify-center items-center  w-full h-full">
+      <div className="flex customShadow rounded-3xl w-10/12 tb:h-[70%] tb:gap-4 tb:flex-col tb:justify-center">
+        <div className={`flex basis-1/3 tb:h-1/2 tb:basis-auto`}>
           <img
             src={myProfleImage}
-            className="object-cove rounded-tl-3xl rounded-bl-3xl"
-            width={400}
+            className="object-cover rounded-tl-3xl rounded-bl-3xl w-full tb:rounded-3xl "
             alt="Profile"
           ></img>
         </div>
-        <div className="flex flex-col justify-center px-12 w-[700px] ">
+        <div
+          className={`flex flex-col justify-center basis-2/3 my-5 mr-5 lg:ml-5 tb:m-0 tb:ml-0 tb:h-1/2 tb:p-5 tb:pt-0 tb:basis-auto`}
+        >
           {step === 0 && (
-            <div className="flex flex-col gap-8">
-              <h2 className="text-5xl">Hi 👋, I'm Rohit Mathur</h2>
-              <div className="flex flex-col gap-3">
-                <p className="text-xl">
-                  A passionate Web developer from Jaipur, India.
-                </p>
-                <p className="text-xl">
+            <div className="flex flex-col gap-8 tb:gap-4 tb:items-center">
+              <h2 className="text-xl md:text-4xl lg:text-5xl">
+                Hi 👋, I'm Rohit Mathur
+              </h2>
+              <div className="flex flex-col gap-3 tb:items-center w-full sm:w-[70%] lg:w-full text-xs md:text-xl">
+                <p>A passionate Web developer from Jaipur, India.</p>
+                <p className="tb:w-5/6 tb:text-center">
                   I am currently working as a Software Engineer at rtCamp
                   Solutions Pvt. Ltd
                 </p>
-                <button onClick={() => handleStepChange(1)}>
+                <button
+                  onClick={() => handleStepChange(1)}
+                  className="tb:flex tb:justify-center"
+                >
                   <img
                     src={arrow}
-                    className="h-10 transition-transform hover:translate-x-2 duration-500"
+                    className="h-6 sm:h-10 transition-transform hover:translate-x-2 duration-500"
                     alt="Next"
                   ></img>
                 </button>
@@ -94,52 +98,44 @@ const UserClass = () => {
             </div>
           )}
           {step === 1 && (
-            <div className="flex flex-col gap-5">
-              <h2 className="text-2xl font-medium">
+            <div className="flex flex-col gap-5 tb:items-center">
+              <h2 className="text-xl text-center sm:text-left sm:text-2xl font-normal sm:font-medium">
                 I am currently Learning and Working on:
               </h2>
-              <div className="flex flex- gap-10">
+              <div className="flex gap-10">
                 <img
-                  className="object-contain"
+                  className="object-contain w-[45px] sm:w-[75px]"
                   src={reactLogo}
-                  width={75}
-                  height={75}
                   alt="React"
                 />
                 <img
-                  className="object-contain"
+                  className="object-contain w-[45px] sm:w-[75px]"
                   src={jsLogo}
-                  width={75}
-                  height={75}
                   alt="JavaScript"
                 />
                 <img
-                  className="object-contain"
+                  className="object-contain w-[45px] sm:w-[75px]"
                   src={wordPressLogo}
-                  width={75}
-                  height={75}
                   alt="WordPress"
                 />
                 <img
-                  className="object-contain"
+                  className="object-contain w-[45px] sm:w-[75px]"
                   src={phpLogo}
-                  width={75}
-                  height={75}
                   alt="PHP"
                 />
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between tb:w-1/2">
                 <button onClick={() => handleStepChange(0)}>
                   <img
                     src={arrow}
-                    className="h-10 rotate-180 transition-transform hover:translate-x-2 duration-500"
+                    className="h-6 sm:h-10 rotate-180 transition-transform hover:translate-x-2 duration-500"
                     alt="Previous"
                   ></img>
                 </button>
                 <button onClick={() => handleStepChange(2)}>
                   <img
                     src={arrow}
-                    className="h-10 transition-transform hover:translate-x-2 duration-500"
+                    className="h-6 sm:h-10 transition-transform hover:translate-x-2 duration-500"
                     alt="Next"
                   ></img>
                 </button>
@@ -147,15 +143,15 @@ const UserClass = () => {
             </div>
           )}
           {step === 2 && (
-            <div className="flex flex-col gap-5">
-              <h2 className="text-2xl font-medium mb-5">
+            <div className="flex flex-col gap-5 tb:items-center tb:gap-5">
+              <h2 className="text-xl tb:text-center lg:text-left sm:text-2xl font-normal sm:font-medium mb-5 tb:mb-0 sm:w-4/5">
                 Let's connect and have some amazing Conversations about anything
                 you want!😎
               </h2>
               <div className="flex gap-10">
                 <Link to={instaURL} target="_blank" rel="noopener noreferrer">
                   <img
-                    className="object-contain w-[75px] h-[75px] transition-transform hover:scale-125 duration-200"
+                    className="object-contain w-[45px] sm:w-[75px] transition-transform hover:scale-125 duration-200"
                     src={instagramLogo}
                     alt="Instagram"
                   />
@@ -166,14 +162,14 @@ const UserClass = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    className="object-contain w-[75px] h-[75px] transition-transform hover:scale-125 duration-200"
+                    className="object-contain w-[45px] sm:w-[75px] transition-transform hover:scale-125 duration-200"
                     src={linkedinLogo}
                     alt="LinkedIn"
                   />
                 </Link>
                 <Link to={githubURL} target="_blank" rel="noopener noreferrer">
                   <img
-                    className="object-contain w-[75px] h-[75px] transition-transform hover:scale-125 duration-200"
+                    className="object-contain w-[45px] sm:w-[75px] transition-transform hover:scale-125 duration-200"
                     src={githubLogo}
                     alt="GitHub"
                   />
@@ -182,7 +178,7 @@ const UserClass = () => {
               <button onClick={() => handleStepChange(1)}>
                 <img
                   src={arrow}
-                  className="h-10 rotate-180 transition-transform hover:translate-x-2 duration-500"
+                  className="h-6 sm:h-10 rotate-180 transition-transform hover:translate-x-2 duration-500"
                   alt="Previous"
                 ></img>
               </button>

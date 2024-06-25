@@ -10,11 +10,19 @@ const useAllRestaurants = () => {
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_ALL_RESTAURANTS);
-
     const json = await data.json();
-    setListOfRes(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    let resData;
+    if (window.innerWidth > 768) {
+      resData =
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      setListOfRes(resData || []);
+    } else {
+      resData =
+        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      setListOfRes(resData || []);
+    }
   };
 
   return listOfRes;

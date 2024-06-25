@@ -20,12 +20,36 @@ body {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
   .customShadow {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* .mobileMenu {
+    transition: all 1s ease-in-out;
+  } */
+
+  @media (max-width: 768px) {
+    .mobileMenu {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 101vh;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      background-color: #000;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: -10px 0px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      gap: 5rem;
+    }
   }
 }
