@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import rupee from "../assets/rupee.svg";
@@ -11,7 +11,7 @@ const RestaurantMenu = () => {
   const [showItem, setShowItem] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
 
-  if (resInfo === null) return <Shimmer />;
+  if (null === resInfo) return <Shimmer />;
 
   const {
     name,
@@ -23,13 +23,16 @@ const RestaurantMenu = () => {
     totalRatingsString,
   } = resInfo?.cards[2]?.card?.card?.info;
 
-  const itemCards =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (item) =>
-        item?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+  const resInfoCards =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
+    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
+  const itemCards = resInfoCards.filter(
+    (item) =>
+      item?.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
+  console.log("🚀 ~ RestaurantMenu ~ itemCards:", itemCards);
   const offers =
     resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
 
@@ -45,7 +48,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <div className="text-center w-[700px] mx-auto mt-10">
+      <div className="text-center w-11/12 md:w-[700px] mx-auto mt-10">
         <div className="flex justify-between pb-4 border-b-2 border-dashed ">
           <div>
             <h2 className="font-medium text-2xl text-left">{name}</h2>
