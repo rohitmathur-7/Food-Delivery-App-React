@@ -5,6 +5,7 @@ import Body from "./src/components/Body";
 import About from "./src/components/About";
 import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
+import DishRestaurants from "./src/components/DishRestaurants";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./src/utils/UserContext";
@@ -26,69 +27,73 @@ const About = lazy(() => import("./src/components/About"));
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 const App = () => {
-  const [userName, setUserName] = useState();
+	const [userName, setUserName] = useState();
 
-  // Authentication Code Dummy Data
-  useEffect(() => {
-    // Make an API call and send username and password
-    const data = {
-      name: "Rohit Mathur",
-    };
-    setUserName(data.name);
-  }, []);
+	// Authentication Code Dummy Data
+	useEffect(() => {
+		// Make an API call and send username and password
+		const data = {
+			name: "Rohit Mathur",
+		};
+		setUserName(data.name);
+	}, []);
 
-  return (
-    <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app flex flex-col items-center">
-          <Header />
-          <Outlet />
-        </div>
-      </UserContext.Provider>
-    </Provider>
-  );
+	return (
+		<Provider store={appStore}>
+			<UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+				<div className="app flex flex-col items-center">
+					<Header />
+					<Outlet />
+				</div>
+			</UserContext.Provider>
+		</Provider>
+	);
 };
 
 const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/about",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
-      },
-      {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-    ],
-    errorElement: <Error />,
-  },
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{
+				path: "/",
+				element: <Body />,
+			},
+			{
+				path: "/about",
+				element: (
+					<Suspense fallback={<h1>Loading...</h1>}>
+						<About />
+					</Suspense>
+				),
+			},
+			{
+				path: "/contact",
+				element: <Contact />,
+			},
+			{
+				path: "/restaurant/:resId",
+				element: <RestaurantMenu />,
+			},
+			{
+				path: "/grocery",
+				element: (
+					<Suspense fallback={<h1>Loading...</h1>}>
+						<Grocery />
+					</Suspense>
+				),
+			},
+			{
+				path: "/cart",
+				element: <Cart />,
+			},
+			{
+				path: "/dish/:collectionId",
+				element: <DishRestaurants />,
+			},
+		],
+		errorElement: <Error />,
+	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
