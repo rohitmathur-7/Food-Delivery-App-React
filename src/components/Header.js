@@ -30,6 +30,14 @@ const Header = () => {
 		}
 	}, []);
 
+	useEffect(() => {
+		if (isNavOpen) {
+			document.body.classList.add("overflow-hidden");
+		} else {
+			document.body.classList.remove("overflow-hidden");
+		}
+	}, [isNavOpen]);
+
 	return (
 		<nav className="header flex items-center justify-center mb-4 tb:mb-12 py-4 shadow-md font-montserrat w-full">
 			<div className="flex w-11/12 justify-between relative">
@@ -38,10 +46,23 @@ const Header = () => {
 						🍔 <span className="logo">FoodMania</span>
 					</div>
 				</Link>
+				{isNavOpen && (
+					<div
+						className={`fixed top-0 left-0 w-full h-full bg-black/30 backdrop-blur-sm z-10 sm:hidden
+					transition-opacity duration-300 ease-in-out
+					${
+						isNavOpen
+							? "opacity-100 pointer-events-auto"
+							: "opacity-0 pointer-events-none"
+					}`}
+						onClick={handleMobileMenu}
+					/>
+				)}
+
 				<ul
 					className={`mobileMenu text-base font-medium bg-white transition-transform duration-300 ease-in-out
     fixed top-0 right-0 h-screen w-3/4 z-10 flex flex-col transform
-    ${isNavOpen ? "translate-x-0" : "translate-x-full"}
+	${isNavOpen ? "translate-x-0 mobileMenuOpen" : "translate-x-full"}
     sm:static sm:h-auto sm:w-auto sm:translate-x-0 sm:transform-none sm:flex sm:flex-row sm:gap-8 sm:items-center md:text-base lg:text-xl`}
 				>
 					<Link className="flex items-center gap-1" to="/">

@@ -47,9 +47,12 @@ body {
 			background-color: #000;
 			color: #fff;
 			text-transform: uppercase;
-			box-shadow: -10px 0px 8px 0 rgba(0, 0, 0, 0.2);
 			transition: all 0.3s ease-in-out;
 			gap: 5rem;
+		}
+
+		.mobileMenuOpen {
+			box-shadow: -10px 0px 8px 0 rgba(0, 0, 0, 0.2);
 		}
 	}
 }
