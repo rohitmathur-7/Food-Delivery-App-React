@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
 import burger from "../assets/hamburger.png";
-import { shopping } from "../assets/shopping.png";
-import { instagram } from "../assets/instagram.png";
 import { IoCartOutline } from "react-icons/io5";
+import { AiOutlineHome } from "react-icons/ai";
 
 const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -33,27 +32,21 @@ const Header = () => {
 
 	return (
 		<nav className="header flex items-center justify-center mb-4 tb:mb-12 py-4 shadow-md font-montserrat w-full">
-			<div className="flex w-11/12 justify-between">
+			<div className="flex w-11/12 justify-between relative">
 				<Link to="/">
 					<div className="text-2xl lg:text-4xl flex gap-2">
 						🍔 <span className="logo">FoodMania</span>
 					</div>
 				</Link>
 				<ul
-					className={`mobileMenu text-base flex ${
-						showNav || isNavOpen
-							? "visible right-0"
-							: "invisible -right-1/3 px-0"
-					} sm:flex-row sm:gap-8 sm:items-center md:text-base lg:text-xl font-medium`}
+					className={`mobileMenu text-base font-medium bg-white transition-transform duration-300 ease-in-out
+    fixed top-0 right-0 h-screen w-3/4 z-10 flex flex-col transform
+    ${isNavOpen ? "translate-x-0" : "translate-x-full"}
+    sm:static sm:h-auto sm:w-auto sm:translate-x-0 sm:transform-none sm:flex sm:flex-row sm:gap-8 sm:items-center md:text-base lg:text-xl`}
 				>
-					{/* <li className="hidden sm:block">
-						Online Status: {onlineStatus ? "✅" : "❌"}
-					</li> */}
-					<Link to="/">
+					<Link className="flex items-center gap-1" to="/">
+						<AiOutlineHome />
 						<li>Home</li>
-					</Link>
-					<Link to="/about">
-						<li>About Me!</li>
 					</Link>
 					<Link to="/cart">
 						<li className="relative flex items-center gap-1">
@@ -63,7 +56,7 @@ const Header = () => {
 									{totalItems}
 								</span>
 							)}
-							{window.innerWidth > 768 && <span>Cart</span>}
+							<span>Cart</span>
 						</li>
 					</Link>
 
